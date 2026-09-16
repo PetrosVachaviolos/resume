@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Petros Vachaviolos - CV</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  @page { size: A4; margin: 0; }
+  html, body { background: #e9ecf1; }
+  body { font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #2a2a2a; }
+
+  .page {
+    width: 210mm; min-height: 297mm; margin: 24px auto;
+    background: #fff; display: flex;
+    box-shadow: 0 2px 14px rgba(10,21,48,0.10);
+  }
+  .band { width: 8mm; background: #2980d4; flex: none; }
+  .content { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+
+  /* HEADER */
+  .header {
+    background: #f2f4f7; border-bottom: 1.5px solid #2980d4;
+    padding: 20px 32px 16px 28px;
+    display: flex; justify-content: space-between; align-items: center; gap: 20px;
+  }
+  .identity { display: flex; align-items: center; gap: 18px; }
+  .photo {
+    width: 92px; height: 92px; border-radius: 50%; object-fit: cover; object-position: center top;
+    border: 3px solid #fff; flex: none; background: #dde3ec;
+  }
+  .name { font-family: Georgia, serif; font-size: 29px; font-weight: bold; color: #0a1530; line-height: 1; }
+  .tagline { font-size: 11.5px; font-weight: bold; color: #2980d4; text-transform: uppercase; margin-top: 7px; }
+  .contact {
+    display: grid; grid-template-columns: 14px auto; column-gap: 8px; row-gap: 4px;
+    align-items: center; font-size: 10px; color: #4a4f5a; flex: none;
+    padding-left: 16px; border-left: 1px solid #cfd6e2;
+  }
+  .contact i { color: #2980d4; font-size: 10.5px; text-align: center; }
+  .contact span { white-space: nowrap; }
+  .contact a { color: inherit; text-decoration: none; }
+
+  /* COLUMNS */
+  .columns { display: flex; flex: 1; align-items: stretch; }
+  .sidebar {
+    order: -1; width: 188px; flex: none; background: #f7f8fa;
+    border-right: 1px solid #e3e7ee; padding: 16px 14px 18px 14px;
+  }
+  .main { flex: 1; min-width: 0; padding: 16px 28px 10px 24px; }
+
+  .sec { display: flex; align-items: center; gap: 8px; margin: 0 0 8px 0; }
+  .sec h2 { font-size: 11.5px; font-weight: bold; color: #2980d4; text-transform: uppercase; white-space: nowrap; }
+  .sec::after { content: ""; flex: 1; border-top: 1.5px solid #2980d4; }
+  .sec.mt { margin-top: 11px; }
+  .sidebar .sec { margin-bottom: 6px; }
+
+  /* SIDEBAR */
+  .group { margin-bottom: 9px; }
+  .group h3 { font-size: 9.5px; font-weight: bold; color: #2980d4; text-transform: uppercase; margin-bottom: 3px; }
+  .group h3 i { margin-right: 5px; font-size: 9px; }
+  .sk { font-size: 10px; color: #2a2a2a; line-height: 1.45; padding-left: 9px; text-indent: -9px; }
+  .sk b { color: #1a1a1a; }
+  .sk .lvl { color: #666; }
+
+  .edu-name { font-size: 10.5px; font-weight: bold; color: #1a1a1a; line-height: 1.35; }
+  .edu-school { font-size: 10px; color: #333; margin-top: 2px; line-height: 1.4; }
+  .edu-note { font-size: 9.5px; color: #555; font-style: italic; margin-top: 2px; }
+  .edu-date { font-size: 10px; color: #2980d4; font-weight: bold; margin-top: 3px; }
+
+  .lang { font-size: 10px; color: #2a2a2a; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+  .lang img { height: 11px; width: 17px; object-fit: cover; }
+
+  .ach { font-size: 10px; color: #2a2a2a; line-height: 1.4; margin-bottom: 6px; display: flex; gap: 6px; }
+  .ach i { color: #2980d4; margin-top: 2px; flex: none; }
+  .ach .yr { color: #2980d4; font-weight: bold; white-space: nowrap; }
+  .ach-grid .ach { font-size: 10.5px; margin-bottom: 3px; align-items: baseline; }
+  .ach-grid .ach > div { flex: 1; display: flex; justify-content: space-between; gap: 12px; }
+  .ach-grid .ach .yr { width: var(--datecol); text-align: right; flex: none; }
+
+  /* MAIN */
+  .summary { font-size: 11px; line-height: 1.5; color: #333; text-align: justify; }
+
+  .job { margin-bottom: 9px; padding-bottom: 8px; border-bottom: 0.5px solid #dde3ec; }
+  .job:last-child { border-bottom: none; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .job-title { font-size: 11.5px; font-weight: bold; color: #1a1a1a; }
+  .job-date { font-size: 10.5px; font-weight: bold; color: #2980d4; white-space: nowrap; width: var(--datecol); flex: none; text-align: right; }
+  .job-intro { font-size: 10.5px; color: #555; font-style: italic; margin-top: 2px; }
+  .tech { font-size: 9.5px; color: #777; font-style: italic; margin-top: 4px; }
+  .ach-label { font-size: 10px; font-weight: bold; color: #555; text-transform: uppercase; margin: 6px 0 2px 0; }
+  .proj { margin-top: 4px; }
+  .proj-title { font-size: 11.5px; font-weight: bold; color: #2980d4; margin-bottom: 1px; }
+  .proj-title a.gh { color: #2980d4; text-decoration: none; margin-left: 6px; font-size: 10.5px; font-weight: normal; }
+  .proj-title a.gh i { vertical-align: -1px; }
+  .bul { font-size: 10.5px; line-height: 1.42; color: #333; padding-left: 12px; text-indent: -12px; }
+  .bul .dot { color: #2980d4; font-weight: bold; display: inline-block; width: 12px; text-indent: 0; }
+  .additional { font-size: 10px; color: #555; font-style: italic; margin-top: 6px; line-height: 1.45; }
+  /* text column stops before the date column */
+  .main { --datecol: 112px; }
+  .summary, .job-intro, .tech, .proj, .additional, .job > .bul { margin-right: calc(var(--datecol) + 12px); }
+  .job-head { gap: 12px; }
+
+  .comp { font-size: 10px; color: #2a2a2a; line-height: 1.45; padding-left: 12px; text-indent: -12px; margin-bottom: 1px; }
+  .comp .dot { color: #2980d4; font-weight: bold; display: inline-block; width: 12px; text-indent: 0; }
+
+  @media print {
+    html, body { background: #fff; }
+    .page { margin: 0; box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="band"></div>
+  <div class="content">
+
+    <div class="header">
+      <div class="identity">
+        <img class="photo" src="data:image/jpeg;base64,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" alt="Petros Vachaviolos">
+        <div>
+          <div class="name">Petros Vachaviolos</div>
+          <div class="tagline">RPA Developer &amp; Automation Specialist</div>
+        </div>
+      </div>
+      <div class="contact">
+        <i class="fa-solid fa-envelope"></i><span><a href="mailto:petros.vahaviolos@gmail.com">petros.vahaviolos@gmail.com</a></span>
+        <i class="fa-solid fa-phone"></i><span>+30 694 743 0265</span>
+        <i class="fa-solid fa-location-dot"></i><span>Chalkida, Greece</span>
+        <i class="fa-solid fa-cake-candles"></i><span>17/08/1990</span>
+        <i class="fa-brands fa-linkedin"></i><span><a href="https://www.linkedin.com/in/petros-vachaviolos">linkedin.com/in/petros-vachaviolos</a></span>
+        <i class="fa-brands fa-github"></i><span><a href="https://github.com/PetrosVachaviolos">github.com/PetrosVachaviolos</a></span>
+      </div>
+    </div>
+
+    <div class="columns">
+
+      <div class="main">
+        <div class="sec"><h2>Professional Summary</h2></div>
+        <div class="summary">Business Intelligence &amp; Automation Engineer with 4+ years of experience designing enterprise automation solutions, ETL pipelines and SAP integrations within a manufacturing environment. Skilled in Python, SQL, Power BI and Power Query, delivering scalable solutions that reduce manual effort, improve data quality and support Tax and Customs operations.</div>
+
+        <div class="sec mt"><h2>Professional Experience</h2></div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="job-title">RPA Developer &amp; Automation Specialist &ndash; Elvalhalcor (Viohalco Group)</div>
+            <div class="job-date">Jun 2022 &ndash; Present</div>
+          </div>
+          <div class="job-intro">Responsible for enterprise process automation, ETL development and SAP integrations supporting Tax and Customs operations.</div>
+          <div class="tech">Tech: Python &middot; Power Query &middot; Power Automate Desktop &middot; Power Automate Cloud &middot; SAP GUI</div>
+          <div class="ach-label">Selected Achievements</div>
+
+          <div class="proj">
+            <div class="proj-title">Matching Invoice with MRN through AADE AES <a class="gh" href="https://github.com/PetrosVachaviolos/aade-aes-power-query" title="github.com/PetrosVachaviolos/aade-aes-power-query"><i class="fa-brands fa-github"></i></a></div>
+            <div class="bul"><span class="dot">&bull;</span>Integrated AADE AES and SAP data sources to identify unmatched export invoices.</div>
+            <div class="bul"><span class="dot">&bull;</span>Automated MRN entry into SAP for each unmatched invoice, eliminating manual updates.</div>
+            <div class="bul"><span class="dot">&bull;</span>Achieved 95% reduction in execution time and 100% data accuracy.</div>
+          </div>
+
+          <div class="proj">
+            <div class="proj-title">Import Customs Declaration Processing <a class="gh" href="https://github.com/PetrosVachaviolos/ima-pad-flow" title="github.com/PetrosVachaviolos/ima-pad-flow"><i class="fa-brands fa-github"></i></a></div>
+            <div class="bul"><span class="dot">&bull;</span>Integrated ICISnet and SAP data to identify unregistered import declarations.</div>
+            <div class="bul"><span class="dot">&bull;</span>Automated XML processing, SAP posting and PDF attachment for each unregistered import.</div>
+            <div class="bul"><span class="dot">&bull;</span>Achieved 30% reduction in execution time and 100% data accuracy.</div>
+          </div>
+
+          <div class="proj">
+            <div class="proj-title">Customs Compliance Documentation Submission</div>
+            <div class="bul"><span class="dot">&bull;</span>Automated splitting of consolidated Excel into individual PDFs, retrieval from SAP and submission to ICISnet with SAP status update.</div>
+            <div class="bul"><span class="dot">&bull;</span>Implemented fault-tolerant resume logic ensuring continuity after interruption.</div>
+            <div class="bul"><span class="dot">&bull;</span>Achieved 50% reduction in execution time. 2,240 entries for 2024 completed in 1 month instead of 2.</div>
+          </div>
+
+          <div class="proj">
+            <div class="proj-title">Supplier Invoice Reconciliation Engine (Matching Report) <a class="gh" href="https://github.com/PetrosVachaviolos/supplier-invoice-reconciliation" title="github.com/PetrosVachaviolos/supplier-invoice-reconciliation"><i class="fa-brands fa-github"></i></a></div>
+            <div class="bul"><span class="dot">&bull;</span>Built multi-source reconciliation across ELVALHALCOR datasets with 5-category matching on VAT ID, date, amount and reference.</div>
+            <div class="bul"><span class="dot">&bull;</span>Detected additional unmatched transactions not identified by the existing company mechanism.</div>
+          </div>
+
+          <div class="proj">
+            <div class="proj-title">Employee Company Car Tax Calculation</div>
+            <div class="bul"><span class="dot">&bull;</span>Automated extraction and normalization of vehicle data from multiple supplier files and SAP account movements.</div>
+            <div class="bul"><span class="dot">&bull;</span>Calculated per-employee taxable amounts based on months of vehicle usage, achieving 100% calculation accuracy.</div>
+          </div>
+
+          <div class="additional"></div>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="job-title">Distributor &amp; Sales Assistant &ndash; Aspida Dianomes S.A.</div>
+            <div class="job-date">May 2019 &ndash; May 2021</div>
+          </div>
+          <div class="bul" style="margin-top:3px;"><span class="dot">&bull;</span>Distribution operations and client payment reconciliation.</div>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="job-title">Junior Category Manager (PPE) &ndash; W&uuml;rth Hellas S.A.</div>
+            <div class="job-date">Jun 2016 &ndash; Jul 2017</div>
+          </div>
+          <div class="bul" style="margin-top:3px;"><span class="dot">&bull;</span>Created and launched the company's PPE product category, contributing to 90% year-over-year revenue growth.</div>
+          <div class="bul"><span class="dot">&bull;</span>Developed pricing strategy, negotiated with suppliers and trained a network of 160 salesmen on new product activations.</div>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="job-title">Marketing Internship &ndash; W&uuml;rth Hellas S.A.</div>
+            <div class="job-date">Jan 2015 &ndash; Jun 2015</div>
+          </div>
+          <div class="bul" style="margin-top:3px;"><span class="dot">&bull;</span>CLV-based client segmentation project in collaboration with the CEO.</div>
+        </div>
+
+        <div class="sec mt"><h2>Achievements &amp; Activities</h2></div>
+        <div class="ach-grid">
+          <div class="ach"><i class="fa-solid fa-trophy"></i><div><span>1st place &ndash; Strategic Marketing &amp; B2B Marketing Competitions, AUEB</span><span class="yr">2014</span></div></div>
+          <div class="ach"><i class="fa-solid fa-volleyball"></i><div><span>8x 1st place &ndash; Beach Volleyball cross-regional tournaments</span><span class="yr">2008 &ndash; 2015</span></div></div>
+          <div class="ach"><i class="fa-solid fa-shield-halved"></i><div><span>Military Service &ndash; Presidential Guard</span><span class="yr">2015 &ndash; 2016</span></div></div>
+          <div class="ach"><i class="fa-solid fa-users"></i><div><span>Volunteer &ndash; Get Involved program, AUEB (1 year)</span><span class="yr">2008 &ndash; 2009</span></div></div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="sec"><h2>Technical Skills</h2></div>
+
+        <div class="group">
+          <h3><i class="fa-solid fa-gears"></i>Automation</h3>
+          <div class="sk">&bull; <b>Power Automate for Desktop</b></div>
+          <div class="sk">&bull; <b>Power Automate Cloud</b></div>
+          <div class="sk">&bull; <b>Python</b></div>
+          <div class="sk">&bull; <b>UiPath</b></div>
+        </div>
+
+        <div class="group">
+          <h3><i class="fa-solid fa-database"></i>Data</h3>
+          <div class="sk">&bull; <b>MS Excel</b></div>
+          <div class="sk">&bull; <b>Power Query</b></div>
+          <div class="sk">&bull; <b>SQL</b></div>
+          <div class="sk">&bull; <b>Python</b></div>
+        </div>
+
+        <div class="group">
+          <h3><i class="fa-solid fa-chart-column"></i>Reporting</h3>
+          <div class="sk">&bull; <b>Power BI</b></div>
+          <div class="sk">&bull; <b>Power Pivot</b></div>
+          <div class="sk">&bull; <b>MS Excel</b></div>
+        </div>
+
+        <div class="group">
+          <h3><i class="fa-solid fa-desktop"></i>ERP</h3>
+          <div class="sk">&bull; <b>SAP GUI</b></div>
+        </div>
+
+        <div class="sec mt"><h2>Core Competencies</h2></div>
+        <div class="comp"><span class="dot">&bull;</span>Process Automation (RPA)</div>
+        <div class="comp"><span class="dot">&bull;</span>ETL &amp; Data Reconciliation</div>
+        <div class="comp"><span class="dot">&bull;</span>SAP Integration &amp; Posting Automation</div>
+        <div class="comp"><span class="dot">&bull;</span>REST API Integrations</div>
+        <div class="comp"><span class="dot">&bull;</span>XML &amp; PDF Processing</div>
+
+        <div class="sec mt"><h2>Business Domains</h2></div>
+        <div class="group">
+          <h3><i class="fa-solid fa-ship"></i>Customs</h3>
+          <div class="sk">&bull; Import/Export Compliance (ICISnet, AES)</div>
+        </div>
+        <div class="group">
+          <h3><i class="fa-solid fa-file-invoice"></i>Tax</h3>
+          <div class="sk">&bull; Transfer Pricing Benchmarking</div>
+          <div class="sk">&bull; Company Car Benefit Taxation</div>
+        </div>
+        <div class="group">
+          <h3><i class="fa-solid fa-coins"></i>Finance</h3>
+          <div class="sk">&bull; Supplier Invoice Reconciliation</div>
+        </div>
+
+        <div class="sec mt"><h2>Education</h2></div>
+        <div class="edu-name">BSc in Marketing &amp; Communication</div>
+        <div class="edu-school">Athens University of Economics and Business</div>
+        <div class="edu-note">Specialisation: Marketing Science<br>Modules: Strategic Marketing, Consumer Behaviour, Marketing Analytics, Pricing Strategy, Digital Marketing, Brand Management</div>
+        <div class="edu-date">Graduated 2018</div>
+        <div class="edu-name" style="margin-top:7px;">Secondary Education Certificate</div>
+        <div class="edu-school">1st High School of Chalkida</div>
+        <div class="edu-note">Grade: 19.1/20 &middot; University Entrance Exam: 17,887</div>
+        <div class="edu-date">2008</div>
+
+        <div class="sec mt"><h2>Languages</h2></div>
+        <div class="lang"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAMCAIAAADgcHrrAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAABn0lEQVR4nE2SP2sUURTFz7nz5mV2JrtRQQIJ/mM/RLCSVGIRMQqxtbaxFPwA+QQ2tmki1ttoHbCwsTGFCtFGQTSb7CpsMjP3WLzd0feay+Xdx/mdezjc2HMB8tf7tz9/mTx6cjDox6b14/GZCwQEACDmRwCBMD5t5AA9y7LzGscnddNYVdrz3ZuDfqwbl0gIAEmzNMewfeeKBFLLVVxbrXa2rhVFyHOsXu5VZXRALskBkiRBUABPTqeSSOYhkGzdl2L2/cfvzQej6bTJMgpzoeyEAuHW/VHbIka92d96f/jz8dODXi+/OAhvR/cuXSiaRkq6JJJYwIajr3/cGYLXdTuZ1B8/TVdWlr5FPtt9VxTBSEHyBAdC7pIQdu5el2CGsszX16qH2zeqMrauX+Mz95kEQJIEGGnG1KF0DhDgbNaYMcYAKf28cF7/mBbdMNx4maosIwSBkpBu95bk3BNJkJx7rz5YRgIuNxpJl0DIu90mM2AkSAKCwtX1ZZrRAEgOMqmn5EhcgJmlhHSJYX/4grT/pEsC5xSEAHoqBHRR+wvgVcytg43T/gAAAABJRU5ErkJggg==" alt=""> Greek (native)</div>
+        <div class="lang"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAxNCI+CjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIxNCIgZmlsbD0iIzAxMjE2OSIvPgo8cGF0aCBkPSJNMCwwIEwyMCwxNCBNMjAsMCBMMCwxNCIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuOCIvPgo8cGF0aCBkPSJNMCwwIEwyMCwxNCBNMjAsMCBMMCwxNCIgc3Ryb2tlPSIjQzgxMDJFIiBzdHJva2Utd2lkdGg9IjEuNiIvPgo8cGF0aCBkPSJNMTAsMCBWMTQgTTAsNyBIMjAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI0Ii8+CjxwYXRoIGQ9Ik0xMCwwIFYxNCBNMCw3IEgyMCIgc3Ryb2tlPSIjQzgxMDJFIiBzdHJva2Utd2lkdGg9IjIuNCIvPgo8L3N2Zz4=" alt=""> English (fluent)</div>
+        <div class="lang"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAxNCI+CjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSI0LjY3IiBmaWxsPSIjMDAwIi8+CjxyZWN0IHk9IjQuNjciIHdpZHRoPSIyMCIgaGVpZ2h0PSI0LjY3IiBmaWxsPSIjRDAwIi8+CjxyZWN0IHk9IjkuMzMiIHdpZHRoPSIyMCIgaGVpZ2h0PSI0LjY3IiBmaWxsPSIjRkZDRTAwIi8+Cjwvc3ZnPg==" alt=""> German (basic)</div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
