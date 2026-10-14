@@ -12,16 +12,16 @@
 
   .page {
     width: 210mm; min-height: 297mm; margin: 24px auto;
-    background: #fff; display: flex;
+    background: #fff; display: flex; padding-right: 4px;
     box-shadow: 0 2px 14px rgba(10,21,48,0.10);
   }
-  .band { width: 8mm; background: #2980d4; flex: none; }
+  .band { width: 4.5mm; background: #2980d4; flex: none; }
   .content { flex: 1; display: flex; flex-direction: column; min-width: 0; }
 
   /* HEADER */
   .header {
-    background: #f2f4f7; border-bottom: 1.5px solid #2980d4;
-    padding: 20px 32px 16px 28px;
+    background: #f2f4f7; border-bottom: 1.5px solid #2980d4; position: relative; z-index: 2;
+    padding: 11px 4px 11px 16px;
     display: flex; justify-content: space-between; align-items: center; gap: 20px;
   }
   .identity { display: flex; align-items: center; gap: 18px; }
@@ -34,7 +34,7 @@
   .contact {
     display: grid; grid-template-columns: 14px auto; column-gap: 8px; row-gap: 4px;
     align-items: center; font-size: 10px; color: #4a4f5a; flex: none;
-    padding-left: 16px; border-left: 1px solid #cfd6e2;
+    padding-left: 16px; border-left: 1px solid #cfd6e2; margin-right: 40px;
   }
   .contact i { color: #2980d4; font-size: 10.5px; text-align: center; }
   .contact span { white-space: nowrap; }
@@ -44,9 +44,9 @@
   .columns { display: flex; flex: 1; align-items: stretch; }
   .sidebar {
     order: -1; width: 188px; flex: none; background: #f7f8fa;
-    border-right: 1px solid #e3e7ee; padding: 16px 14px 18px 14px;
+    border-right: 1px solid #e3e7ee; padding: 16px 4px 4px 4px;
   }
-  .main { flex: 1; min-width: 0; padding: 16px 28px 10px 24px; }
+  .main { flex: 1; min-width: 0; padding: 16px 0 4px 14px; }
 
   .sec { display: flex; align-items: center; gap: 8px; margin: 0 0 8px 0; }
   .sec h2 { font-size: 11.5px; font-weight: bold; color: #2980d4; text-transform: uppercase; white-space: nowrap; }
@@ -55,7 +55,8 @@
   .sidebar .sec { margin-bottom: 6px; }
 
   /* SIDEBAR */
-  .group { margin-bottom: 9px; }
+  .group { margin-bottom: 6px; }
+  .sidebar .sec.mt { margin-top: 9px; }
   .group h3 { font-size: 9.5px; font-weight: bold; color: #2980d4; text-transform: uppercase; margin-bottom: 3px; }
   .group h3 i { margin-right: 5px; font-size: 9px; }
   .sk { font-size: 10px; color: #2a2a2a; line-height: 1.45; padding-left: 9px; text-indent: -9px; }
@@ -63,9 +64,9 @@
   .sk .lvl { color: #666; }
 
   .edu-name { font-size: 10.5px; font-weight: bold; color: #1a1a1a; line-height: 1.35; }
-  .edu-school { font-size: 10px; color: #333; margin-top: 2px; line-height: 1.4; }
-  .edu-note { font-size: 9.5px; color: #555; font-style: italic; margin-top: 2px; }
-  .edu-date { font-size: 10px; color: #2980d4; font-weight: bold; margin-top: 3px; }
+  .edu-school { font-size: 10px; color: #333; margin-top: 3px; line-height: 1.45; }
+  .edu-note { font-size: 9.5px; color: #555; font-style: italic; margin-top: 4px; line-height: 1.45; }
+  .edu-date { font-size: 10px; color: #2980d4; font-weight: bold; margin-top: 4px; }
 
   .lang { font-size: 10px; color: #2a2a2a; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
   .lang img { height: 11px; width: 17px; object-fit: cover; }
@@ -75,16 +76,16 @@
   .ach .yr { color: #2980d4; font-weight: bold; white-space: nowrap; }
   .ach-grid .ach { font-size: 10.5px; margin-bottom: 3px; align-items: baseline; }
   .ach-grid .ach > div { flex: 1; display: flex; justify-content: space-between; gap: 12px; }
-  .ach-grid .ach .yr { width: var(--datecol); text-align: right; flex: none; }
+  .ach-grid .ach .yr { width: var(--datecol); text-align: right; flex: none; margin-right: 4px; }
 
   /* MAIN */
-  .summary { font-size: 11px; line-height: 1.5; color: #333; text-align: justify; }
+  .summary { font-size: 11px; line-height: 1.5; color: #333; text-align: justify; margin-right: 4px; }
 
   .job { margin-bottom: 9px; padding-bottom: 8px; border-bottom: 0.5px solid #dde3ec; }
   .job:last-child { border-bottom: none; }
   .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
   .job-title { font-size: 11.5px; font-weight: bold; color: #1a1a1a; }
-  .job-date { font-size: 10.5px; font-weight: bold; color: #2980d4; white-space: nowrap; width: var(--datecol); flex: none; text-align: right; }
+  .job-date { font-size: 10.5px; font-weight: bold; color: #2980d4; white-space: nowrap; width: var(--datecol); flex: none; text-align: right; margin-right: 4px; }
   .job-intro { font-size: 10.5px; color: #555; font-style: italic; margin-top: 2px; }
   .tech { font-size: 9.5px; color: #777; font-style: italic; margin-top: 4px; }
   .ach-label { font-size: 10px; font-weight: bold; color: #555; text-transform: uppercase; margin: 6px 0 2px 0; }
@@ -97,7 +98,7 @@
   .additional { font-size: 10px; color: #555; font-style: italic; margin-top: 6px; line-height: 1.45; }
   /* text column stops before the date column */
   .main { --datecol: 112px; }
-  .summary, .job-intro, .tech, .proj, .additional, .job > .bul { margin-right: calc(var(--datecol) + 12px); }
+  .job-intro, .tech, .proj, .additional, .job > .bul { margin-right: calc(var(--datecol) + 12px); }
   .job-head { gap: 12px; }
 
   .comp { font-size: 10px; color: #2a2a2a; line-height: 1.45; padding-left: 12px; text-indent: -12px; margin-bottom: 1px; }
@@ -137,7 +138,7 @@
 
       <div class="main">
         <div class="sec"><h2>Professional Summary</h2></div>
-        <div class="summary">Business Intelligence &amp; Automation Engineer with 4+ years of experience designing enterprise automation solutions, ETL pipelines and SAP integrations within a manufacturing environment. Skilled in Python, SQL, Power BI and Power Query, delivering scalable solutions that reduce manual effort, improve data quality and support Tax and Customs operations.</div>
+        <div class="summary">RPA Developer &amp; Automation Specialist with 4+ years building production automation with Power Automate Desktop and Cloud, integrated with Python for data processing and business logic. Experienced in REST APIs (JSON, OAuth 2.0), SAP GUI automation and ETL for Tax and Customs operations, with a focus on reliability: logging, error handling and resumable runs.</div>
 
         <div class="sec mt"><h2>Professional Experience</h2></div>
 
@@ -147,20 +148,19 @@
             <div class="job-date">Jun 2022 &ndash; Present</div>
           </div>
           <div class="job-intro">Responsible for enterprise process automation, ETL development and SAP integrations supporting Tax and Customs operations.</div>
-          <div class="tech">Tech: Python &middot; Power Query &middot; Power Automate Desktop &middot; Power Automate Cloud &middot; SAP GUI</div>
+          <div class="tech">Tech: Power Automate Desktop &middot; Power Automate Cloud &middot; AI Builder &middot; Python &middot; REST / OAuth 2.0 &middot; SAP GUI Scripting &middot; Power Query &middot; Git</div>
           <div class="ach-label">Selected Achievements</div>
 
           <div class="proj">
             <div class="proj-title">Matching Invoice with MRN through AADE AES <a class="gh" href="https://github.com/PetrosVachaviolos/aade-aes-power-query" title="github.com/PetrosVachaviolos/aade-aes-power-query"><i class="fa-brands fa-github"></i></a></div>
-            <div class="bul"><span class="dot">&bull;</span>Integrated AADE AES and SAP data sources to identify unmatched export invoices.</div>
-            <div class="bul"><span class="dot">&bull;</span>Automated MRN entry into SAP for each unmatched invoice, eliminating manual updates.</div>
-            <div class="bul"><span class="dot">&bull;</span>Achieved 95% reduction in execution time and 100% data accuracy.</div>
+            <div class="bul"><span class="dot">&bull;</span>Integrated the AADE AES REST API (OAuth 2.0, JSON, pagination) with SAP data to identify unmatched export invoices.</div>
+            <div class="bul"><span class="dot">&bull;</span>Automated batch MRN entry into SAP (~300 entries per month): 95% less execution time, 100% data accuracy.</div>
           </div>
 
           <div class="proj">
             <div class="proj-title">Import Customs Declaration Processing <a class="gh" href="https://github.com/PetrosVachaviolos/ima-pad-flow" title="github.com/PetrosVachaviolos/ima-pad-flow"><i class="fa-brands fa-github"></i></a></div>
-            <div class="bul"><span class="dot">&bull;</span>Integrated ICISnet and SAP data to identify unregistered import declarations.</div>
-            <div class="bul"><span class="dot">&bull;</span>Automated XML processing, SAP posting and PDF attachment for each unregistered import.</div>
+            <div class="bul"><span class="dot">&bull;</span>Reconciled ICISnet against SAP to identify unregistered import declarations, including any the customs brokers failed to send.</div>
+            <div class="bul"><span class="dot">&bull;</span>Automated XML processing, SAP posting and PDF attachment; rebuilt from PAD in Python with SAP GUI Scripting for unattended, confirmed postings.</div>
             <div class="bul"><span class="dot">&bull;</span>Achieved 30% reduction in execution time and 100% data accuracy.</div>
           </div>
 
@@ -172,18 +172,27 @@
           </div>
 
           <div class="proj">
+            <div class="proj-title">AI Document Data Extraction for Customs Broker Declarations</div>
+            <div class="bul"><span class="dot">&bull;</span>Combined Power Automate Cloud &amp; Desktop, AI Builder prompts, Python and APIs.</div>
+            <div class="bul"><span class="dot">&bull;</span>Extracts declaration data from brokers' documents automatically, replacing manual entry.</div>
+          </div>
+
+          <div class="proj">
             <div class="proj-title">Supplier Invoice Reconciliation Engine (Matching Report) <a class="gh" href="https://github.com/PetrosVachaviolos/supplier-invoice-reconciliation" title="github.com/PetrosVachaviolos/supplier-invoice-reconciliation"><i class="fa-brands fa-github"></i></a></div>
             <div class="bul"><span class="dot">&bull;</span>Built multi-source reconciliation across ELVALHALCOR datasets with 5-category matching on VAT ID, date, amount and reference.</div>
             <div class="bul"><span class="dot">&bull;</span>Detected additional unmatched transactions not identified by the existing company mechanism.</div>
+            <div class="bul"><span class="dot">&bull;</span>Automated the SAP data collection (vendor line items, supplier master) via SAP GUI Scripting.</div>
           </div>
 
           <div class="proj">
             <div class="proj-title">Employee Company Car Tax Calculation</div>
-            <div class="bul"><span class="dot">&bull;</span>Automated extraction and normalization of vehicle data from multiple supplier files and SAP account movements.</div>
-            <div class="bul"><span class="dot">&bull;</span>Calculated per-employee taxable amounts based on months of vehicle usage, achieving 100% calculation accuracy.</div>
+            <div class="bul"><span class="dot">&bull;</span>Automated vehicle data extraction from supplier files and SAP account movements; per-employee taxable amounts with 100% calculation accuracy.</div>
           </div>
 
-          <div class="additional"></div>
+          <div class="proj">
+            <div class="proj-title">Reliability &amp; Monitoring across the Automation Suite</div>
+            <div class="bul"><span class="dot">&bull;</span>File logging with per-step timing, error screenshots, cross-process SAP locking and credentials in Windows Credential Manager.</div>
+          </div>
         </div>
 
         <div class="job">
@@ -203,14 +212,6 @@
           <div class="bul"><span class="dot">&bull;</span>Developed pricing strategy, negotiated with suppliers and trained a network of 160 salesmen on new product activations.</div>
         </div>
 
-        <div class="job">
-          <div class="job-head">
-            <div class="job-title">Marketing Internship &ndash; W&uuml;rth Hellas S.A.</div>
-            <div class="job-date">Jan 2015 &ndash; Jun 2015</div>
-          </div>
-          <div class="bul" style="margin-top:3px;"><span class="dot">&bull;</span>CLV-based client segmentation project in collaboration with the CEO.</div>
-        </div>
-
         <div class="sec mt"><h2>Achievements &amp; Activities</h2></div>
         <div class="ach-grid">
           <div class="ach"><i class="fa-solid fa-trophy"></i><div><span>1st place &ndash; Strategic Marketing &amp; B2B Marketing Competitions, AUEB</span><span class="yr">2014</span></div></div>
@@ -227,8 +228,10 @@
           <h3><i class="fa-solid fa-gears"></i>Automation</h3>
           <div class="sk">&bull; <b>Power Automate for Desktop</b></div>
           <div class="sk">&bull; <b>Power Automate Cloud</b></div>
+          <div class="sk">&bull; <b>AI Builder</b></div>
           <div class="sk">&bull; <b>Python</b></div>
           <div class="sk">&bull; <b>UiPath</b></div>
+          <div class="sk">&bull; <b>SAP Scripting</b></div>
         </div>
 
         <div class="group">
@@ -243,7 +246,6 @@
           <h3><i class="fa-solid fa-chart-column"></i>Reporting</h3>
           <div class="sk">&bull; <b>Power BI</b></div>
           <div class="sk">&bull; <b>Power Pivot</b></div>
-          <div class="sk">&bull; <b>MS Excel</b></div>
         </div>
 
         <div class="group">
@@ -251,17 +253,30 @@
           <div class="sk">&bull; <b>SAP GUI</b></div>
         </div>
 
+        <div class="group">
+          <h3><i class="fa-solid fa-plug"></i>Integration</h3>
+          <div class="sk">&bull; <b>REST APIs (OAuth 2.0 &middot; JSON)</b></div>
+        </div>
+
+        <div class="group">
+          <h3><i class="fa-solid fa-code-branch"></i>Version Control</h3>
+          <div class="sk">&bull; <b>Git / GitHub</b></div>
+        </div>
+
         <div class="sec mt"><h2>Core Competencies</h2></div>
         <div class="comp"><span class="dot">&bull;</span>Process Automation (RPA)</div>
         <div class="comp"><span class="dot">&bull;</span>ETL &amp; Data Reconciliation</div>
-        <div class="comp"><span class="dot">&bull;</span>SAP Integration &amp; Posting Automation</div>
-        <div class="comp"><span class="dot">&bull;</span>REST API Integrations</div>
+        <div class="comp"><span class="dot">&bull;</span>SAP Integration &amp; Posting</div>
+        <div class="comp"><span class="dot">&bull;</span>API Integrations</div>
+        <div class="comp"><span class="dot">&bull;</span>Python in Automation Workflows</div>
+        <div class="comp"><span class="dot">&bull;</span>Logging &amp; Error Handling</div>
         <div class="comp"><span class="dot">&bull;</span>XML &amp; PDF Processing</div>
+        <div class="comp"><span class="dot">&bull;</span>AI Document Data Extraction</div>
 
         <div class="sec mt"><h2>Business Domains</h2></div>
         <div class="group">
           <h3><i class="fa-solid fa-ship"></i>Customs</h3>
-          <div class="sk">&bull; Import/Export Compliance (ICISnet, AES)</div>
+          <div class="sk">&bull; Import/Export Compliance<br>(ICISnet, AES)</div>
         </div>
         <div class="group">
           <h3><i class="fa-solid fa-file-invoice"></i>Tax</h3>
@@ -275,12 +290,12 @@
 
         <div class="sec mt"><h2>Education</h2></div>
         <div class="edu-name">BSc in Marketing &amp; Communication</div>
-        <div class="edu-school">Athens University of Economics and Business</div>
+        <div class="edu-school">Athens University of<br>Economics and Business</div>
         <div class="edu-note">Specialisation: Marketing Science<br>Modules: Strategic Marketing, Consumer Behaviour, Marketing Analytics, Pricing Strategy, Digital Marketing, Brand Management</div>
         <div class="edu-date">Graduated 2018</div>
-        <div class="edu-name" style="margin-top:7px;">Secondary Education Certificate</div>
+        <div class="edu-name" style="margin-top:10px;">High School Diploma</div>
         <div class="edu-school">1st High School of Chalkida</div>
-        <div class="edu-note">Grade: 19.1/20 &middot; University Entrance Exam: 17,887</div>
+        <div class="edu-note">Grade: 19,1/20<br><span style="white-space:nowrap;">University Entrance Exams: 17.687</span></div>
         <div class="edu-date">2008</div>
 
         <div class="sec mt"><h2>Languages</h2></div>

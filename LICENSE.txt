@@ -1,0 +1,5 @@
+Copyright (c) 2026 Petros Vachaviolos. All rights reserved.
+
+This repository contains the personal CV of Petros Vachaviolos.
+No part of it may be copied, modified, republished or used by any other person
+or organisation without the prior written permission of the author.
