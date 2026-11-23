@@ -51,15 +51,15 @@
   .sec { display: flex; align-items: center; gap: 8px; margin: 0 0 8px 0; }
   .sec h2 { font-size: 11.5px; font-weight: bold; color: #2980d4; text-transform: uppercase; white-space: nowrap; }
   .sec::after { content: ""; flex: 1; border-top: 1.5px solid #2980d4; }
-  .sec.mt { margin-top: 11px; }
-  .sidebar .sec { margin-bottom: 6px; }
+  .sec.mt { margin-top: 9px; }
+  .sidebar .sec { margin-bottom: 5px; }
 
   /* SIDEBAR */
-  .group { margin-bottom: 6px; }
-  .sidebar .sec.mt { margin-top: 9px; }
+  .group { margin-bottom: 4px; }
+  .sidebar .sec.mt { margin-top: 8px; }
   .group h3 { font-size: 9.5px; font-weight: bold; color: #2980d4; text-transform: uppercase; margin-bottom: 3px; }
   .group h3 i { margin-right: 5px; font-size: 9px; }
-  .sk { font-size: 10px; color: #2a2a2a; line-height: 1.45; padding-left: 9px; text-indent: -9px; }
+  .sk { font-size: 10px; color: #2a2a2a; line-height: 1.36; padding-left: 9px; text-indent: -9px; }
   .sk b { color: #1a1a1a; }
   .sk .lvl { color: #666; }
 
@@ -68,7 +68,7 @@
   .edu-note { font-size: 9.5px; color: #555; font-style: italic; margin-top: 4px; line-height: 1.45; }
   .edu-date { font-size: 10px; color: #2980d4; font-weight: bold; margin-top: 4px; }
 
-  .lang { font-size: 10px; color: #2a2a2a; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+  .lang { font-size: 10px; color: #2a2a2a; margin-bottom: 2px; display: flex; align-items: center; gap: 6px; }
   .lang img { height: 11px; width: 17px; object-fit: cover; }
 
   .ach { font-size: 10px; color: #2a2a2a; line-height: 1.4; margin-bottom: 6px; display: flex; gap: 6px; }
@@ -81,7 +81,7 @@
   /* MAIN */
   .summary { font-size: 11px; line-height: 1.5; color: #333; text-align: justify; margin-right: 4px; }
 
-  .job { margin-bottom: 9px; padding-bottom: 8px; border-bottom: 0.5px solid #dde3ec; }
+  .job { margin-bottom: 7px; padding-bottom: 6px; border-bottom: 0.5px solid #dde3ec; }
   .job:last-child { border-bottom: none; }
   .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
   .job-title { font-size: 11.5px; font-weight: bold; color: #1a1a1a; }
@@ -89,11 +89,11 @@
   .job-intro { font-size: 10.5px; color: #555; font-style: italic; margin-top: 2px; }
   .tech { font-size: 9.5px; color: #777; font-style: italic; margin-top: 4px; }
   .ach-label { font-size: 10px; font-weight: bold; color: #555; text-transform: uppercase; margin: 6px 0 2px 0; }
-  .proj { margin-top: 4px; }
+  .proj { margin-top: 3px; }
   .proj-title { font-size: 11.5px; font-weight: bold; color: #2980d4; margin-bottom: 1px; }
   .proj-title a.gh { color: #2980d4; text-decoration: none; margin-left: 6px; font-size: 10.5px; font-weight: normal; }
   .proj-title a.gh i { vertical-align: -1px; }
-  .bul { font-size: 10.5px; line-height: 1.42; color: #333; padding-left: 12px; text-indent: -12px; }
+  .bul { font-size: 10.5px; line-height: 1.36; color: #333; padding-left: 12px; text-indent: -12px; }
   .bul .dot { color: #2980d4; font-weight: bold; display: inline-block; width: 12px; text-indent: 0; }
   .additional { font-size: 10px; color: #555; font-style: italic; margin-top: 6px; line-height: 1.45; }
   /* text column stops before the date column */
@@ -165,6 +165,17 @@
           </div>
 
           <div class="proj">
+            <div class="proj-title">Unattended Customs Monitoring Service (24/7)</div>
+            <div class="bul"><span class="dot">&bull;</span>Monitors ICISnet, queues new import declarations and posts them to SAP with confirmed saves; self-restarting watchdog, health checks and alert e-mails.</div>
+          </div>
+
+          <div class="proj">
+            <div class="proj-title">Export Licence Automation (AES)</div>
+            <div class="bul"><span class="dot">&bull;</span>AES status tracking, licence PDF download, e-mail notification and attachment to the SAP invoice: 111 licences in the first 8 working days.</div>
+            <div class="bul"><span class="dot">&bull;</span>Generates export declaration XML from SAP data, validated daily against the declarations actually submitted.</div>
+          </div>
+
+          <div class="proj">
             <div class="proj-title">Customs Compliance Documentation Submission</div>
             <div class="bul"><span class="dot">&bull;</span>Automated splitting of consolidated Excel into individual PDFs, retrieval from SAP and submission to ICISnet with SAP status update.</div>
             <div class="bul"><span class="dot">&bull;</span>Implemented fault-tolerant resume logic ensuring continuity after interruption.</div>
@@ -173,8 +184,7 @@
 
           <div class="proj">
             <div class="proj-title">AI Document Data Extraction for Customs Broker Declarations</div>
-            <div class="bul"><span class="dot">&bull;</span>Combined Power Automate Cloud &amp; Desktop, AI Builder, Python and APIs.</div>
-            <div class="bul"><span class="dot">&bull;</span>Extracts declaration data from brokers' documents automatically, replacing manual entry.</div>
+            <div class="bul"><span class="dot">&bull;</span>Extracts declaration data from brokers' documents automatically (Power Automate Cloud &amp; Desktop, AI Builder, Python), replacing manual entry.</div>
           </div>
 
           <div class="proj">
@@ -197,14 +207,6 @@
 
         <div class="job">
           <div class="job-head">
-            <div class="job-title">Distributor &amp; Sales Assistant &ndash; Aspida Dianomes S.A.</div>
-            <div class="job-date">May 2019 &ndash; May 2021</div>
-          </div>
-          <div class="bul" style="margin-top:3px;"><span class="dot">&bull;</span>Distribution operations and client payment reconciliation.</div>
-        </div>
-
-        <div class="job">
-          <div class="job-head">
             <div class="job-title">Junior Category Manager (PPE) &ndash; W&uuml;rth Hellas S.A.</div>
             <div class="job-date">Jun 2016 &ndash; Jul 2017</div>
           </div>
@@ -212,12 +214,12 @@
           <div class="bul"><span class="dot">&bull;</span>Developed pricing strategy, negotiated with suppliers and trained a network of 160 salesmen on new product activations.</div>
         </div>
 
+
         <div class="sec mt"><h2>Achievements &amp; Activities</h2></div>
         <div class="ach-grid">
           <div class="ach"><i class="fa-solid fa-trophy"></i><div><span>1st place &ndash; Strategic Marketing &amp; B2B Marketing Competitions, AUEB</span><span class="yr">2014</span></div></div>
           <div class="ach"><i class="fa-solid fa-volleyball"></i><div><span>8x 1st place &ndash; Beach Volleyball cross-regional tournaments</span><span class="yr">2008 &ndash; 2015</span></div></div>
           <div class="ach"><i class="fa-solid fa-shield-halved"></i><div><span>Military Service &ndash; Presidential Guard</span><span class="yr">2015 &ndash; 2016</span></div></div>
-          <div class="ach"><i class="fa-solid fa-users"></i><div><span>Volunteer &ndash; Get Involved program, AUEB (1 year)</span><span class="yr">2008 &ndash; 2009</span></div></div>
         </div>
       </div>
 
@@ -276,16 +278,22 @@
         <div class="sec mt"><h2>Business Domains</h2></div>
         <div class="group">
           <h3><i class="fa-solid fa-ship"></i>Customs</h3>
-          <div class="sk">&bull; Import/Export Compliance<br>(ICISnet, AES)</div>
+          <div class="sk">&bull; Import/Export Compliance (ICISnet, AES)</div>
+          <div class="sk">&bull; Inward Processing &amp; Warehousing</div>
         </div>
         <div class="group">
           <h3><i class="fa-solid fa-file-invoice"></i>Tax</h3>
           <div class="sk">&bull; Transfer Pricing Benchmarking</div>
           <div class="sk">&bull; Company Car Benefit Taxation</div>
+          <div class="sk">&bull; myDATA e-invoicing</div>
         </div>
         <div class="group">
           <h3><i class="fa-solid fa-coins"></i>Finance</h3>
           <div class="sk">&bull; Supplier Invoice Reconciliation</div>
+        </div>
+        <div class="group">
+          <h3><i class="fa-solid fa-truck"></i>Logistics</h3>
+          <div class="sk">&bull; Goods Receipts (SAP MIGO)</div>
         </div>
 
         <div class="sec mt"><h2>Education</h2></div>
